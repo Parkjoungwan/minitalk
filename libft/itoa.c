@@ -5,24 +5,14 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: joupark <joupark@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/24 16:10:16 by joupark           #+#    #+#             */
-/*   Updated: 2021/10/24 16:12:55 by joupark          ###   ########.fr       */
+/*   Created: 2021/11/19 14:26:10 by joupark           #+#    #+#             */
+/*   Updated: 2021/11/19 18:30:01 by joupark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "server.h"
+#include "libft.h"
 
-size_t	ft_strlen(const char *s)
-{
-	size_t result;
-
-	result = 0;
-	while (s[result])
-		result++;
-	return (result);
-}
-
-int	ft_numlen(int n)
+static	int		ft_numlen(int n)
 {
 	int	result;
 
@@ -67,14 +57,13 @@ static	void	ft_fillstr(int n, int i, char *result)
 	}
 }
 
-char	*ft_itoa(int n)
+char			*ft_itoa(int n)
 {
 	char	*result;
 	int		i;
 
 	i = ft_numlen(n);
-	result = malloc(sizeof(char) * (i + 1));
-	if (!result)
+	if (!(result = malloc(sizeof(char) * (i + 1))))
 		return (NULL);
 	result[i--] = '\0';
 	ft_fillstr(n, i, result);

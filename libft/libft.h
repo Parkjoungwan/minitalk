@@ -1,31 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: joupark <joupark@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/24 16:08:24 by joupark           #+#    #+#             */
-/*   Updated: 2021/10/24 17:00:02 by joupark          ###   ########.fr       */
+/*   Created: 2021/11/19 16:59:28 by joupark           #+#    #+#             */
+/*   Updated: 2021/11/20 16:10:13 by joupark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "server.h"
+#ifndef LIBFT_H
+# define LIBFT_H
+#include <stddef.h>
+#include <stdlib.h>
+#include <unistd.h>
 
-void	ft_print(int pid)
-{
-	char	*pid_str;
+int		ft_atoi(char *str);
+void	ft_bzero(void *s, size_t n);
+char	*ft_itoa(int n);
+size_t	ft_strlen(const char *s);
 
-	pid_str = ft_itoa(pid);
-	write(1, "server pid: ", 12);
-	write(1, pid_str, ft_strlen(pid_str));
-	write(1, "\n", 1);
-}
-
-int	main()
-{
-	ft_print(getpid());
-	while(1)
-		pause();
-	return (0);
-}
+#endif
