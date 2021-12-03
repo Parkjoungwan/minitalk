@@ -6,7 +6,7 @@
 /*   By: joupark <joupark@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/26 19:53:55 by joupark           #+#    #+#             */
-/*   Updated: 2021/12/03 22:02:23 by joupark          ###   ########.fr       */
+/*   Updated: 2021/12/03 22:23:11 by joupark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,13 @@ int	ft_space(char c)
 	if (c == '\t' || c == '\r' || c == '\n'
 		|| c == ' ' || c == '\f' || c == '\v')
 		return (1);
+	return (0);
+}
+
+int	ft_overflow(int pm)
+{
+	if (pm == 1)
+		return (-1);
 	return (0);
 }
 
@@ -42,8 +49,7 @@ int	ft_atoi(char *str)
 		result += *str - '0';
 		str++;
 	}
-	(((pm == 1) && (result = -1)) || ((pm != 4) && (result = 0)));
 	if (result >= 9223372036854775808ULL)
-		return (result);
+		return (ft_overflow(pm));
 	return (result * pm);
 }
