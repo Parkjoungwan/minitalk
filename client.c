@@ -6,7 +6,7 @@
 /*   By: joupark <joupark@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/19 12:53:51 by joupark           #+#    #+#             */
-/*   Updated: 2021/12/03 21:33:37 by joupark          ###   ########.fr       */
+/*   Updated: 2021/12/03 21:45:37 by joupark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 void	send_char(int pid, unsigned char byte)
 {
-	int counter;
+	int	counter;
 
 	counter = 1 << 6;
 	while (counter)
@@ -35,8 +35,8 @@ void	send_char(int pid, unsigned char byte)
 
 void	ft_handler(char *str_pid, char *message)
 {
-	int pid;
-	
+	int	pid;
+
 	pid = ft_atoi(str_pid);
 	while (*message)
 	{

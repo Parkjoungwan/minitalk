@@ -6,21 +6,21 @@
 /*   By: joupark <joupark@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/26 19:53:55 by joupark           #+#    #+#             */
-/*   Updated: 2021/11/19 18:30:54 by joupark          ###   ########.fr       */
+/*   Updated: 2021/12/03 21:54:31 by joupark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_space(char c)
+int	ft_space(char c)
 {
-	if (c == '\t' || c == '\r' || c == '\n' ||
-			c == ' ' || c == '\f' || c == '\v')
+	if (c == '\t' || c == '\r' || c == '\n'
+		|| c == ' ' || c == '\f' || c == '\v')
 		return (1);
 	return (0);
 }
 
-int		ft_atoi(char *str)
+int	ft_atoi(char *str)
 {
 	int				pm;
 	unsigned long	result;
@@ -42,7 +42,8 @@ int		ft_atoi(char *str)
 		result += *str - '0';
 		str++;
 	}
+	((pm == 1) && (result = -1) || (pm != 4) && (result = 0));
 	if (result >= 9223372036854775808ULL)
-		return (pm == 1 ? -1 : 0);
+		return result;
 	return (result * pm);
 }

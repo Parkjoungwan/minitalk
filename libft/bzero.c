@@ -6,7 +6,7 @@
 /*   By: joupark <joupark@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/19 13:50:13 by joupark           #+#    #+#             */
-/*   Updated: 2021/11/19 18:30:37 by joupark          ###   ########.fr       */
+/*   Updated: 2021/12/03 21:55:28 by joupark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,5 +15,5 @@
 void	ft_bzero(void *s, size_t n)
 {
 	while (n--)
-		*(unsigned char*)s++ = 0;
+		*(unsigned char *)s++ = 0;
 }

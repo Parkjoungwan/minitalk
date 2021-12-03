@@ -6,14 +6,14 @@
 /*   By: joupark <joupark@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/19 13:06:23 by joupark           #+#    #+#             */
-/*   Updated: 2021/12/03 21:30:13 by joupark          ###   ########.fr       */
+/*   Updated: 2021/12/03 21:46:31 by joupark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minitalk.h"
 #include "libft/libft.h"
 
-void	print_pid()
+void	print_pid(void)
 {
 	char	*str_pid;
 
@@ -37,7 +37,7 @@ void	ft_ac(int sig, siginfo_t *info, void *context)
 	g_set.message[g_set.byte] += g_set.bit;
 	g_set.bit >>= 1;
 	if (g_set.byte == BUFFSIZE - 2
-			&& !g_set.bit)
+		&& !g_set.bit)
 		g_set.overflow = 1;
 }
 
@@ -54,14 +54,14 @@ void	ft_nc(int sig, siginfo_t *info, void *context)
 	if (g_set.byte == BUFFSIZE - 2 && !g_set.bit)
 		g_set.overflow = 1;
 	else if (!g_set.message[g_set.byte]
-			&& !g_set.bit)
+		&& !g_set.bit)
 	{
 		g_set.received = 1;
 		kill(info->si_pid, SIGUSR1);
 	}
 }
 
-void ft_handler(void)
+void	ft_handler(void)
 {
 	while (1)
 	{
@@ -82,8 +82,8 @@ void ft_handler(void)
 
 int	main(void)
 {
-	struct sigaction a_c;
-	struct sigaction n_c;
+	struct sigaction	a_c;
+	struct sigaction	n_c;
 
 	a_c.sa_sigaction = ft_ac;
 	n_c.sa_sigaction = ft_nc;
