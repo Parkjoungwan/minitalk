@@ -6,7 +6,7 @@
 /*   By: joupark <joupark@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/26 19:53:55 by joupark           #+#    #+#             */
-/*   Updated: 2021/12/03 21:54:31 by joupark          ###   ########.fr       */
+/*   Updated: 2021/12/03 21:59:38 by joupark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,6 @@ int	ft_atoi(char *str)
 	}
 	((pm == 1) && (result = -1) || (pm != 4) && (result = 0));
 	if (result >= 9223372036854775808ULL)
-		return result;
+		return (result);
 	return (result * pm);
 }
