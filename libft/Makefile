@@ -2,10 +2,10 @@ CC = gcc
 OBJ = atoi.o bzero.o itoa.o strlen.o
 NAME = libft.a
 INCLUDES = ./libft.h
-CFLAGS = -Wall -Werror -Wextra
+CFLAGS = -Wall -Werror -Wextra 
 
 %.o: %.c $(INCLUDES)
-	@$(CC) $(CFLAGS) -c $< -I $(INCLUDES)
+	@$(CC) $(CFLAGS) -c $< $(INCLUDES)
 
 all: $(NAME)
 

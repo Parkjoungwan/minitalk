@@ -17,7 +17,7 @@ $(CLIENT): client.o error.o minitalk.h
 	@ $(CC) client.o error.o $(LIBS) -o $(CLIENT)
 
 %.o: %.c
-	@ $(CC) $(FLAGS) $< -c -I ./minitalk.h
+	@ $(CC) $(FLAGS) $< -c ./minitalk.h
 
 clean:
 	@ make clean -C libft
