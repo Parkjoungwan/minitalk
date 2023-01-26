@@ -27,5 +27,4 @@ client 프로그램을 실행시켰을 때,
 server에서 msg send!라는 메세지가, client에서 received!라는 메세지가 출력 됐다면 성공적으로 메세지가 전송된 것 입니다.
 
 # 실행 예시
-
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/360da1cb-902b-4887-8bbe-686f8da8e0fb/Untitled.png)
+![Untitled](https://user-images.githubusercontent.com/48785968/214737337-5be27e94-e1ac-416b-bfcf-b9281aedf4e3.png)
